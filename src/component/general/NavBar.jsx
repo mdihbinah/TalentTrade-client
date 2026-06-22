@@ -3,7 +3,7 @@
 import { authClient } from "@/app/lib/auth-client";
 import NavLink from "./NavLink";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { LuBrainCog } from "react-icons/lu";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -15,10 +15,14 @@ const links = <>
 </>
 
 const NavBar = () => {
-
   const { data: session } = authClient.useSession();
   const router = useRouter();
 
+  const pathname = usePathname()
+  if (pathname.includes('dashboard')) {
+    return null;
+  }
+  
   const user = session?.user;
 
   const handleSignOut = async () => {
@@ -107,7 +111,7 @@ const NavBar = () => {
 
               {/* Dashboard */}
               <Link
-                href="/dashboard"
+                href={`/dashboard/${user.role}`}
                 className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 text-white hover:scale-105 duration-300 shadow-lg"
               >
                 <MdOutlineDashboardCustomize size={20} />

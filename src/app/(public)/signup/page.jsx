@@ -21,7 +21,7 @@ const SignUP = () => {
       email: userData.email,
       password: userData.password,
       role: userData.role,
-      callbackURL: '/signin'
+      // callbackURL: '/signin'
     })
     console.log('Sign up response:', {data, error});
     
@@ -140,8 +140,8 @@ const SignUP = () => {
     className="select select-bordered w-full focus:border-purple-500 focus:outline-none"
   >
     <option value="">Select Role</option>
-    <option value="buyer">Client</option>
-    <option value="seller">Freelancer</option>
+    <option value="client">Client</option>
+    <option value="freelancer">Freelancer</option>
   </select>
 </div>
 
