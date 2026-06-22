@@ -3,7 +3,7 @@
 
 export default async function FreelancerProfile({ params }) {
   const { id } = await params
-  const res = await fetch(`${process.env.SERVER_URL}/api/freelancer/${id}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/freelancer/${id}`)
   const freelancer = await res.json();
   console.log(freelancer)
 

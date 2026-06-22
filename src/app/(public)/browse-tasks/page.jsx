@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default async function TaskGrid() {
 
-    const res = await fetch(`${process.env.SERVER_URL}/api/tasks`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`)
     const tasks = await res.json();
     console.log(tasks)
 

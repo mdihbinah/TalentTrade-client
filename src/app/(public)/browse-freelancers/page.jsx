@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export default async function BrowseFreelancers() {
-  const res = await fetch(`${process.env.SERVER_URL}/api/freelancers`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/freelancers`)
   const freelancers = await res.json();
   console.log(freelancers)
   return (
