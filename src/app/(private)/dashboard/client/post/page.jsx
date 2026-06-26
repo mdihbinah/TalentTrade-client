@@ -29,7 +29,7 @@ const PostTaskPage = () => {
         taskInfo.createdAt = new Date().toISOString();
 
         console.log(taskInfo);
-        try {
+
             const res = await fetch(
                 `${process.env.NEXT_PUBLIC_SERVER_URL}/tasks`,
                 {
@@ -48,10 +48,6 @@ const PostTaskPage = () => {
                 toast.success('Task posted successfully!');
                 e.target.reset();
             }
-        } catch (error) {
-            console.log(error);
-            toast.error('Failed to post task');
-        }
     };
 
     return (

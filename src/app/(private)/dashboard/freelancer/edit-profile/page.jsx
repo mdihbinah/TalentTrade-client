@@ -21,18 +21,11 @@ const FreelancerDashboardProfile = () => {
     useEffect(() => {
         const fetchFreelancerProfile = async () => {
             if (!session?.user?.id) return;
-            
-            try {
-                const res = await fetch(`http://localhost:5000/api/freelancer/${session.user.id}`);
-                if (!res.ok) throw new Error('Failed to fetch freelancer profile');
-                const data = await res.json();
-                setFreelancerData(data);
-            } catch (error) {
-                console.error(error);
-                toast.error('Could not load profile statistics.');
-            } finally {
-                setLoading(false);
-            }
+            const res = await fetch(`http://localhost:5000/api/freelancer/${session.user.id}`);
+            if (!res.ok) throw new Error('Failed to fetch freelancer profile');
+            const data = await res.json();
+            setFreelancerData(data);
+            setLoading(false);
         };
 
         if (!sessionLoading) {
@@ -93,12 +86,12 @@ const FreelancerDashboardProfile = () => {
                 </p>
             </div>
 
-           
+
 
             {/* Main Form Card Container */}
             <div className="bg-white rounded-3xl border border-purple-100 shadow-lg p-6 md:p-10">
                 <form onSubmit={onSubmit} className="space-y-6">
-                    
+
                     {/* Professional Bio / Headline */}
                     <TextField name="name" isRequired defaultValue={freelancerData?.name || session?.user?.name || ''}>
                         <Label className="font-semibold m-2">Full Professional Name</Label>
