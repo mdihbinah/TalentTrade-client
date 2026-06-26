@@ -31,13 +31,12 @@ const SignInPage = () => {
         autoClose: 2000,
         theme: "light",
       });
-      console.log(data);
-      if (data.role == 'client'){
+      // console.log(data, data.user.role);
+      if (data?.role?.role == 'client'){
         router.push('/')
       } else {
-        router.push(`/dashboard/${role}`)
+        router.push(`/dashboard/${data?.user?.role}`)
       }
-
     }
 
   }

@@ -50,7 +50,7 @@ export default function ClientOverview() {
         </div>
 
         <Link
-          href="/dashboard/client/post-task"
+          href="/dashboard/client/post"
           className="btn border-0 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
         >
           <PlusCircle size={18} />

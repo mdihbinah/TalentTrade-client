@@ -30,8 +30,6 @@ const PostTaskPage = () => {
 
         console.log(taskInfo);
         try {
-            // const { data: tokenData } = await authClient.token();
-            // console.log(process.env.NEXT_PUBLIC_SERVER_URL);
             const res = await fetch(
                 `${process.env.NEXT_PUBLIC_SERVER_URL}/tasks`,
                 {
@@ -46,7 +44,7 @@ const PostTaskPage = () => {
 
             const data = await res.json();
 
-            if (data.insertedId || data.success) {
+            if (data) {
                 toast.success('Task posted successfully!');
                 e.target.reset();
             }
@@ -112,7 +110,7 @@ const PostTaskPage = () => {
                             </Label>
                             <TextArea
                                 placeholder="Outline the exact deliverables, technical stack requirements, rules, and background contexts for this micro-task..."
-                                className="w-full min-h-[140px] px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 hover:border-slate-300 transition-all duration-200 resize-y"
+                                className="w-full min-h-[140px] px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 hover:border-slate-300 transition-all duration-200 resize-y"
                             />
                             <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5 pl-1">
                                 Provide clear step-by-step requirements to help freelancers submit accurate proposals.
@@ -154,11 +152,11 @@ const PostTaskPage = () => {
                     {/* Buttons */}
                     <div className="flex flex-col md:flex-row gap-4 pt-4">
                         <Button
-                            type="button"
+                            type="reset"
                             variant="outline"
                             className="rounded-full md:w-40 border-2 border-purple-600 hover:bg-purple-100"
                         >
-                            Cancel
+                            Reset
                         </Button>
 
                         <Button

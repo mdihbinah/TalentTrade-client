@@ -15,15 +15,15 @@ import { authClient } from "@/app/lib/auth-client";
 
 
 export default function DashboardSidebar() {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const { data: session, isPending } = authClient.useSession();
 
-if (isPending) {
-  return null;
-}
+  if (isPending) {
+    return null;
+  }
 
-const role = session?.user?.role || "freelancer";
-  
+  const role = session?.user?.role || "freelancer";
+
   const dashboardItems = {
     client: [
       {
@@ -32,14 +32,14 @@ const role = session?.user?.role || "freelancer";
         path: "/dashboard/client",
       },
       {
-        name: "Post a Task",
-        icon: FaPlusCircle,
-        path: "/dashboard/client/post",
-      },
-      {
         name: "My Tasks",
         icon: FaTasks,
         path: "/dashboard/client/tasks",
+      },
+      {
+        name: "Post a Task",
+        icon: FaPlusCircle,
+        path: "/dashboard/client/post",
       },
       {
         name: "Received Proposals",
@@ -73,6 +73,11 @@ const role = session?.user?.role || "freelancer";
         name: "My Earnings",
         icon: FaWallet,
         path: "/dashboard/freelancer/earnings",
+      },
+      {
+        name: "Edit Profile",
+        icon: FaWallet,
+        path: "/dashboard/freelancer/edit-profile",
       },
     ],
 
