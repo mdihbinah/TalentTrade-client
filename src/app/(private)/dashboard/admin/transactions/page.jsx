@@ -175,7 +175,8 @@ text-gray-500
 <span className="
 flex
 items-center
-gap-2
+gap-3
+
 w-fit
 px-3
 py-1
