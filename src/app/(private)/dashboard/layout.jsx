@@ -2,7 +2,7 @@ import DashboardSidebar from "@/component/dashboard/DasboardSidebar";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex h-screen max-w-[80%] bg-background">
+    <div className="flex h-screen max-w-[95%] mx-auto bg-background">
       <div className="flex flex-1 overflow-hidden">
         {/* sidebar */}
       <DashboardSidebar/>
