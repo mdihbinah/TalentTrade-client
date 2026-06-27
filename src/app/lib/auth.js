@@ -24,7 +24,7 @@ export const auth = betterAuth({
         defaultValue: "client",
       },
       isBlocked: {
-        defaultValue: "false",
+        defaultValue: false,
       },
     },
   }

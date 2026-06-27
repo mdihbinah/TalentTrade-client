@@ -1,8 +1,5 @@
-"use client";
 
 import { FiCreditCard } from "react-icons/fi";
-
-
 const transactions = [
   {
     client: "client123@gmail.com",
@@ -42,31 +39,31 @@ const transactions = [
 ];
 
 
-export default function TransactionsTable(){
+export default function TransactionsTable() {
 
-return (
+  return (
 
-<div className="min-h-screen bg-purple-50 p-8">
-<div className="mb-6">
+    <div className="min-h-screen bg-purple-50 p-8">
+      <div className="mb-6">
 
-<h1 className="
+        <h1 className="
 text-3xl
 font-bold
 text-purple-700
 ">
-Transactions History
-</h1>
+          Transactions History
+        </h1>
 
 
-<p className="text-gray-500 mt-1">
-All active Stripe payments processed
-</p>
+        <p className="text-gray-500 mt-1">
+          All active Stripe payments processed
+        </p>
 
-</div>
+      </div>
 
 
 
-<div className="
+      <div className="
 bg-white
 rounded-2xl
 shadow-lg
@@ -74,105 +71,80 @@ border
 border-purple-100
 overflow-hidden
 ">
-<table className="w-full">
+        <table className="w-full">
 
 
-<thead>
+          <thead>
 
-<tr className="
+            <tr className="
 bg-purple-600
 text-white
 ">
 
 
-<th className="px-4 py-2 text-left">
-Client Email
-</th>
+              <th className="px-4 py-2 text-left">
+                Client Email
+              </th>
 
-<th className="px-4 py-2 text-left">
-Freelancer Email
-</th>
-<th className="px-4 py-2 text-left">
-Payout Size
-</th>
-<th className="px-4 py-2 text-left">
-Payment Date
-</th>
-<th className="px-4 py-2 text-left">
-Payment
-</th>
-</tr>
-</thead>
-<tbody>
-
-
-{
-transactions.map((item,index)=>(
+              <th className="px-4 py-2 text-left">
+                Freelancer Email
+              </th>
+              <th className="px-4 py-2 text-left">
+                Payout Size
+              </th>
+              <th className="px-4 py-2 text-left">
+                Payment Date
+              </th>
+              <th className="px-4 py-2 text-left">
+                Payment
+              </th>
+            </tr>
+          </thead>
+          <tbody>
 
 
-<tr
-key={index}
-className="
+            {
+              transactions.map((item, index) => (
+
+
+                <tr
+                  key={index}
+                  className="
 border-b
 hover:bg-purple-50
 transition
 ">
-
-
-<td className="
+                  <td className="
 px-4 py-2
 text-gray-700
 ">
 
-{item.client}
+                    {item.client}
 
-</td>
-
-
-
-
-<td className="
+                  </td>
+                  <td className="
 px-4 py-2
 text-gray-500
 ">
 
-{item.freelancer}
-
-</td>
-
-
-
-
-<td className="
+                    {item.freelancer}
+                  </td>
+                  <td className="
 px-4 py-2
 font-semibold
 text-purple-700
 ">
+                    {item.payout}
 
-{item.payout}
-
-</td>
-
-
-
-
-<td className="
+                  </td>
+                  <td className="
 px-4 py-2
 text-gray-500
 ">
-
-{item.date}
-
-</td>
-
-
-
-
-
-<td className="px-4 py-2">
-
-
-<span className="
+                    {item.date}
+                  </td>
+                  <td className="px-4 py-2">
+                    <span className="
 flex
 items-center
 gap-3
@@ -186,31 +158,24 @@ text-green-600
 text-sm
 font-medium
 ">
+                      <FiCreditCard />
 
-<FiCreditCard />
+                      {item.payment}
 
-{item.payment}
-
-</span>
-
-
-</td>
+                    </span>
+                  </td>
+                </tr>
 
 
+              ))
 
+            }
 
-</tr>
+          </tbody>
+        </table>
+      </div>
 
-
-))
-
-}
-
-</tbody>
-</table>
-</div>
-
-</div>
-)
+    </div>
+  )
 
 }

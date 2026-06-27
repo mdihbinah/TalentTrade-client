@@ -1,54 +1,9 @@
-// UsersList.jsx
+import ForToggle from "@/component/dashboard/admin/ForToggle";
 
-import React from "react";
-import { Ban } from "lucide-react";
 
-const users = [
-  {
-    name: "fl",
-    email: "jif@gemil.com",
-    role: "Freelancer",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-  {
-    name: "jin",
-    email: "jin@gemil.com",
-    role: "Freelancer",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-  {
-    name: "jim",
-    email: "jim@gemil.com",
-    role: "Client",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-  {
-    name: "jihad",
-    email: "jijadhussin015@gemil.com",
-    role: "Freelancer",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-  {
-    name: "Jihad Hosen",
-    email: "jihad.hosenp@gmail.com",
-    role: "Client",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-  {
-    name: "Atikur Rahman",
-    email: "atik@gmail.com",
-    role: "Freelancer",
-    status: "Active",
-    joined: "Jun 26, 2026",
-  },
-];
 
-export default function UsersList() {
+export default async function UsersList() {
+  const users = await fetch('http://localhost:5000/api/users').then(r => r.json())
   return (
     <div className="min-h-screen bg-purple-50 p-8">
 
@@ -75,7 +30,7 @@ export default function UsersList() {
           <tbody>
           {users.map((user,index)=>(
             <tr 
-              key={index}
+              key={user._id}
               className="border-b hover:bg-purple-50 transition"
             >
               <td className="px-6 py-4">
@@ -123,7 +78,7 @@ export default function UsersList() {
                   text-sm
                   font-medium
                 ">
-                  {user.status}
+                  {user.isBlocked ? 'Blocked' : 'Active'}
                 </span>
 
               </td>
@@ -132,19 +87,7 @@ export default function UsersList() {
               </td>
 
               <td className="px-6 py-4 text-right">
-                <button
-                  className="
-                  flex
-                  items-center
-                  gap-2
-                  ml-auto
-                  text-red-500
-                  hover:text-red-700
-                  "
-                >
-                  <Ban size={18}/>
-                  Block
-                </button>
+                <ForToggle user={user}></ForToggle>
               </td>
             </tr>
           ))}

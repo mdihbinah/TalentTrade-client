@@ -1,8 +1,14 @@
+'use client'
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaXTwitter, FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 import { LuBrainCog } from "react-icons/lu";
 
 const Footer = () => {
+    const pathname = usePathname()
+      if (pathname.includes('dashboard')) {
+        return null;
+      }
     return (
         <footer className="bg-gradient-to-r from-purple-950 via-purple-900 to-purple-800 text-white mt-20">
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
