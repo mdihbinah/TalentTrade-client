@@ -7,7 +7,7 @@ import { FiTrash2 } from 'react-icons/fi';
 const DeleteTask = ({job}) => {
 const router = useRouter()
     const handleDelete = async() => {
-      const { data: tokenData } = await authClient.token()
+    //   const { data: tokenData } = await authClient.token()
         // console.log('', tokenData);
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${job._id}`, {
             method: 'DELETE',

@@ -13,7 +13,7 @@ const TaskDetails = async({params}) => {
   
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`)
     const task = await res.json();
-    console.log(task)
+    // console.log(task)
     return (
         <main className="min-h-screen bg-gray-50 px-6 py-10">
 

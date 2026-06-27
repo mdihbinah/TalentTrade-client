@@ -10,7 +10,7 @@ import {
     TextField,
 } from '@heroui/react';
 import { toast } from 'react-toastify';
-import { IoPaperPlaneOutline } from 'react-icons/io5'; // Matching the paper plane icon
+import { IoPaperPlaneOutline } from 'react-icons/io5';
 
 const SubmitProposalPage = ({ taskId }) => {
     const { data: session } = authClient.useSession();
