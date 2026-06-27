@@ -174,13 +174,13 @@ text-gray-500
                                                 </span>
                                                 :
                                                 job.status === 'completed' ?
-                                                <span className="px-3 py-1 rounded-full text-sm bg-orange-100 text-green-600">
-                                                    Completed
-                                                </span>
-                                                :
-                                                <span className="px-3 py-1 rounded-full text-sm bg-green-100 text-green-600">
-                                                    In-progress
-                                                </span>
+                                                    <span className="px-3 py-1 rounded-full text-sm bg-orange-100 text-green-600">
+                                                        Completed
+                                                    </span>
+                                                    :
+                                                    <span className="px-3 py-1 rounded-full text-sm bg-green-100 text-green-600">
+                                                        In-progress
+                                                    </span>
 
                                         }
                                     </td>
@@ -192,13 +192,8 @@ text-gray-500
 
                                     <td className="px-3 py-2 text-center
 ">
-                                        <button
-                                            className="text-red-500 hover:text-red-700 text-xl
-"
-                                        >
+                                        <DeleteTask job={job}></DeleteTask>
 
-                                            <DeleteTask job={job}></DeleteTask>
-                                        </button>
                                     </td>
                                 </tr>
 

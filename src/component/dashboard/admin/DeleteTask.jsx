@@ -8,8 +8,8 @@ const DeleteTask = ({job}) => {
 const router = useRouter()
     const handleDelete = async() => {
       const { data: tokenData } = await authClient.token()
-        // console.log('ttttttttt', tokenData);
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/task/${job._id}`, {
+        // console.log('', tokenData);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${job._id}`, {
             method: 'DELETE',
             headers: {
             //   authorization: `Bearer ${tokenData?.token}`
@@ -26,7 +26,7 @@ const router = useRouter()
                 <Button variant="danger"><FiTrash2 /></Button>
                 <AlertDialog.Backdrop>
                     <AlertDialog.Container>
-                        <AlertDialog.Dialog className="sm:max-w-[350px]">
+                        <AlertDialog.Dialog className="sm:max-w-[450px]">
                             <AlertDialog.CloseTrigger />
                             <AlertDialog.Header>
                                 <AlertDialog.Icon status="danger" />

@@ -46,7 +46,7 @@ export default async function TaskGrid() {
             </div>
 
             <Link
-              href={`/tasks/${task._id}`}
+              href={`/task/${task._id}`}
               className="btn w-full mt-5 bg-purple-600 hover:bg-purple-700 text-white border-none"
             >
               View Details

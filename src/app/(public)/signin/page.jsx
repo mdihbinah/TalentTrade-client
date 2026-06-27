@@ -25,14 +25,18 @@ const SignInPage = () => {
         theme: "light",
       });
     } else if (data) {
-      console.log();
+      if (data?.user?.isBlocked) {
+        alert('You are Blocked')
+        return null
+      }
+
       toast.success('Sign In Successful ', {
         position: "top-center",
         autoClose: 2000,
         theme: "light",
       });
       // console.log(data, data.user.role);
-      if (data?.role?.role == 'client'){
+      if (data?.user?.role == 'client') {
         router.push('/')
       } else {
         router.push(`/dashboard/${data?.user?.role}`)
@@ -48,7 +52,7 @@ const SignInPage = () => {
   }
 
 
-  
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-purple-100 px-4">
