@@ -21,7 +21,7 @@ const FreelancerDashboardProfile = () => {
     useEffect(() => {
         const fetchFreelancerProfile = async () => {
             if (!session?.user?.id) return;
-            const res = await fetch(`http://localhost:5000/api/freelancer/${session.user.id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/freelancer/${session.user.id}`);
             if (!res.ok) throw new Error('Failed to fetch freelancer profile');
             const data = await res.json();
             setFreelancerData(data);

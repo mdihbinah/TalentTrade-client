@@ -3,7 +3,7 @@ import ForToggle from "@/component/dashboard/admin/ForToggle";
 
 
 export default async function UsersList() {
-  const users = await fetch('http://localhost:5000/api/users').then(r => r.json())
+  const users = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users`).then(r => r.json())
   return (
     <div className="min-h-screen bg-purple-50 p-8">
 

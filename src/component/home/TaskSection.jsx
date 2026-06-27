@@ -5,7 +5,23 @@ const TaskSection = async() => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks/latest`)
     const tasks = await res.json();
     return (
-        <section className="py-10">
+        <section className="py-10 w-[95%] mx-auto">
+
+<div className="text-center mb-14">
+
+          <h2 className="text-4xl md:text-5xl font-bold mt-3">
+            <span className="text-purple-600"> Latest</span>
+            Task
+          </h2>
+
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Explore thousands of Task opportunities across different
+            categories and find the perfect task that you need.
+          </p>
+        </div>
+
+
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tasks.map((task) => (
           <div

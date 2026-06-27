@@ -25,8 +25,8 @@ export default function AdminOverview() {
     useEffect(() => {
 
         Promise.all([
-            fetch('http://localhost:5000/api/users').then(r => r.json()),
-            fetch('http://localhost:5000/api/tasks').then(r => r.json()),
+            fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users`).then(r => r.json()),
+            fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`).then(r => r.json()),
             // fetch('http://localhost:5000/api/payments').then(r => r.json())
         ]).then(([users, tasks, payments]) => {
 
