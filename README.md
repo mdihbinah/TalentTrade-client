@@ -99,3 +99,35 @@ The platform includes:
 
 ---
 
+## 📊 Dashboard Analytics
+
+### Client Dashboard
+
+* Total Tasks
+* Open Tasks
+* In Progress Tasks
+* Total Spending
+
+### Freelancer Dashboard
+
+* Total Proposals
+* Pending Proposals
+* Accepted Proposals
+* Total Earnings
+
+### Admin Dashboard
+
+* Total Users
+* Total Tasks
+* Active Tasks
+* Total Revenue
+
+---
+
+
+
+
+
+
+
+
