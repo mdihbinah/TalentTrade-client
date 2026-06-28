@@ -50,8 +50,8 @@ export default function AdminOverview() {
     );
 
     const admins = stats.users.filter(u => u.role === "admin").length;
-    const clients = stats.users.filter(u => u.role === "client").length;
-    const freelancers = stats.users.filter(u => u.role === "freelancer").length;
+    const clients = stats.users.filter(u => u.role === "Client").length;
+    const freelancers = stats.users.filter(u => u.role === "Freelancer").length;
 
     const open = stats.tasks.filter(t => t.status === "Open").length;
     const progress = stats.tasks.filter(t => t.status === "In Progress").length;
