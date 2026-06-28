@@ -59,6 +59,8 @@ export default function AdminOverview() {
 
     return (
 
+
+
         <div className="space-y-8">
 
             <div>
@@ -68,7 +70,7 @@ export default function AdminOverview() {
                 </h1>
 
                 <p className="text-gray-500 mt-1">
-                    Platform overview & management
+                    Platform overview & management to be better
                 </p>
 
             </div>

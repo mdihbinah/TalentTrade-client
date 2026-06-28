@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TalentTrade – AI-Powered Freelance Micro-Task Marketplace
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![Express](https://img.shields.io/badge/Express.js-Backend-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen?logo=mongodb)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-635BFF?logo=stripe)
+![BetterAuth](https://img.shields.io/badge/BetterAuth-Authentication-blue)
 
-First, run the development server:
+TalentTrade is a modern freelance marketplace where clients can post micro-tasks and freelancers can submit proposals, get hired, receive payments securely through Stripe, and manage their projects from personalized dashboards. The platform includes dedicated dashboards for Clients, Freelancers, and Admins with secure role-based authentication.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Live Website
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Live Demo:** https://talent-trade-client.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### GitHub Repositories
 
-## Learn More
+* **Client:** https://github.com/mdihbinah/TalentTrade-client
+* **Server:** https://github.com/mdihbinah/TalentTrade-server
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 📖 Project Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+TalentTrade simplifies freelance hiring by allowing businesses and individuals to post small online jobs while enabling skilled freelancers to bid on those projects.
 
-## Deploy on Vercel
+The platform includes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Secure authentication
+* Role-based dashboards
+* Proposal management
+* Stripe payment integration
+* Project tracking
+* Admin management panel
+* Responsive modern UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# ✨ Key Features
+
+## 🔐 Authentication
+
+* Better Auth Authentication
+* Email & Password Login
+* Google OAuth Login
+* JWT Authentication
+* Protected Routes
+* Role-Based Authorization
+* Persistent Login Sessions
+
+---
+
+## 👤 Client Features
+
+* Post new freelance tasks
+* Edit or delete open tasks
+* View all posted tasks
+* Manage freelancer proposals
+* Accept or reject proposals
+* Secure Stripe payment
+* Track task progress
+* Dashboard statistics
+
+---
+
+## 💻 Freelancer Features
+
+* Browse available tasks
+* Search & filter tasks
+* Submit one proposal per task
+* Track proposal status
+* Active Projects page
+* Submit deliverables
+* Earnings dashboard
+* Public profile with skills
+
+---
+
+## 🛠️ Admin Features
+
+* Dashboard analytics
+* Manage all users
+* Block / Unblock users
+* Manage all tasks
+* Delete inappropriate tasks
+* View payment history
+* Platform overview statistics
+
+---
+
+## 💳 Payment System
+
+* Stripe Checkout Integration
+* Secure payment confirmation
+* Automatic task status updates
+* Transaction history
+* Payment success page
+
+---
+
+## 📊 Dashboard Analytics
+
+### Client Dashboard
+
+* Total Tasks
+* Open Tasks
+* In Progress Tasks
+* Total Spending
+
+### Freelancer Dashboard
+
+* Total Proposals
+* Pending Proposals
+* Accepted Proposals
+* Total Earnings
+
+### Admin Dashboard
+
+* Total Users
+* Total Tasks
+* Active Tasks
+* Total Revenue
+
+---
+
+
+# 🔍 Search & Filtering
+
+* Search tasks by title
+* Filter by category
+* Server-side pagination
+* Latest tasks sorting
+
+---
+
+# 📱 Responsive Design
+
+Fully optimized for:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile Devices
+
+---
+
+# 🏗️ Tech Stack
+
+## Frontend
+
+* Next.js 16
+* React
+* Tailwind CSS
+* React Icons
+* React Hot Toast
+* Recharts
+
+---
+
+## Backend
+
+* Express.js
+* MongoDB Atlas
+* JWT Authentication
+* Better Auth
+* Stripe
+* CORS
+* Dotenv
+
+
+
+
+
+
