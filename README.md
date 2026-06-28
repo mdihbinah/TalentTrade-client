@@ -125,6 +125,48 @@ The platform includes:
 ---
 
 
+# 🔍 Search & Filtering
+
+* Search tasks by title
+* Filter by category
+* Server-side pagination
+* Latest tasks sorting
+
+---
+
+# 📱 Responsive Design
+
+Fully optimized for:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile Devices
+
+---
+
+# 🏗️ Tech Stack
+
+## Frontend
+
+* Next.js 16
+* React
+* Tailwind CSS
+* React Icons
+* React Hot Toast
+* Recharts
+
+---
+
+## Backend
+
+* Express.js
+* MongoDB Atlas
+* JWT Authentication
+* Better Auth
+* Stripe
+* CORS
+* Dotenv
 
 
 
