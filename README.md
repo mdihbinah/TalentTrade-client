@@ -37,5 +37,65 @@ The platform includes:
 
 ---
 
+# ✨ Key Features
 
+## 🔐 Authentication
+
+* Better Auth Authentication
+* Email & Password Login
+* Google OAuth Login
+* JWT Authentication
+* Protected Routes
+* Role-Based Authorization
+* Persistent Login Sessions
+
+---
+
+## 👤 Client Features
+
+* Post new freelance tasks
+* Edit or delete open tasks
+* View all posted tasks
+* Manage freelancer proposals
+* Accept or reject proposals
+* Secure Stripe payment
+* Track task progress
+* Dashboard statistics
+
+---
+
+## 💻 Freelancer Features
+
+* Browse available tasks
+* Search & filter tasks
+* Submit one proposal per task
+* Track proposal status
+* Active Projects page
+* Submit deliverables
+* Earnings dashboard
+* Public profile with skills
+
+---
+
+## 🛠️ Admin Features
+
+* Dashboard analytics
+* Manage all users
+* Block / Unblock users
+* Manage all tasks
+* Delete inappropriate tasks
+* View payment history
+* Platform overview statistics
+
+---
+
+## 💳 Payment System
+
+* Stripe Checkout Integration
+* Secure payment confirmation
+* Automatic task status updates
+* Transaction history
+* Payment success page
+
+---
 
