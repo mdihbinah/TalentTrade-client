@@ -1,4 +1,4 @@
-import Hero from "@/component/home/Hero-Section";
+import Hero from "@/component/home/HeroSection";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import TaskSection from "../component/home/TaskSection";

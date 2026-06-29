@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function BrowseFreelancers() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/freelancers`)
   const freelancers = await res.json();
-  console.log(freelancers)
+  // console.log(freelancers)
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 transition-colors duration-200">
       {/* Header Section */}

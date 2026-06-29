@@ -1,3 +1,4 @@
+import { auth } from "@/app/lib/auth";
 import SubmitProposal from "@/component/general/submitProposal";
 import {
   FiDollarSign,

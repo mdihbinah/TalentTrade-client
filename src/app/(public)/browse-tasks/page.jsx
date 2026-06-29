@@ -1,15 +1,29 @@
+'use client'
+
+import TaskSearchFilter from "@/component/Tasks/TaskSearchFilter";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default async function TaskGrid() {
+export default function TaskGrid() {
+  const [tasks, setTasks] = useState([])
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`)
-    const tasks = await res.json();
-    console.log(tasks)
 
-    
-  
+  useEffect(() => {
+
+    const fetchCars = async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`)
+      const data = await res.json();
+      setTasks(data);
+    }
+    fetchCars()
+
+  }, [])
+
+
+
   return (
     <section className="py-10">
+      <TaskSearchFilter setTasks={setTasks}></TaskSearchFilter>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tasks.map((task) => (
           <div
