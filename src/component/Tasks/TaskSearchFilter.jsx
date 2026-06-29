@@ -49,7 +49,7 @@ const TaskSearchFilter = ({ setTasks }) => {
                     <div className="relative w-full sm:w-32">
                         <select
                             name='categories'
-                            className="w-full bg-white text-zinc-700 border border-zinc-100/80 focus:border-purple-600 rounded-full h-11 px-4 pr-8 text-xs font-medium cursor-pointer appearance-none shadow-xs transition-all"
+                            className="w-full bg-white border border-zinc-200 focus:border-purple-600 rounded-full h-11 px-4 pr-8 text-xs font-medium cursor-pointer appearance-none shadow-xs transition-all"
                         >
                             <option value="all">All</option>
                             {categories.map(c => (

@@ -16,28 +16,18 @@ import {
 const MyTasksPage = () => {
     const { data: session } = authClient.useSession();
 // console.log(session);
-const userId = session?.user.id
+const userId = session?.user?.id
+console.log(userId);
 
   const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-tasks`, {
-                    method: 'GET',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                    body: JSON.stringify({id: userId}),
-    })
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/my-tasks?id=${userId}`)
       .then((res) => res.json())
       .then((data) => {
         setTasks(data);
-        setLoading(false);
+        console.log(tasks)
       })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
   }, []);
 
 
