@@ -16,7 +16,7 @@ import {
 const MyTasksPage = () => {
     const { data: session } = authClient.useSession();
 // console.log(session);
-const userId = session?.user?.id
+const userId = session?.user.id
 console.log(userId);
 
   const [tasks, setTasks] = useState([]);
