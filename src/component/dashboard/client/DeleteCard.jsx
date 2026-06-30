@@ -11,8 +11,8 @@ const DeleteCard = ({taskId, proposals}) => {
     // }
 
     const handleDelete = async () => {
-        // const { data: tokenData } = await authClient.token()
-        // console.log('ttttttttt', tokenData);
+        const { data: tokenData } = await authClient.token()
+        console.log('ttttttttt', tokenData);
         console.log('Task Delete');
         if(proposals.length){
             return
@@ -20,7 +20,7 @@ const DeleteCard = ({taskId, proposals}) => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${taskId}`, {
             method: 'DELETE',
             headers: {
-                // authorization: `Bearer ${tokenData?.token}`
+                authorization: `Bearer ${tokenData?.token}`
             }
         })
 

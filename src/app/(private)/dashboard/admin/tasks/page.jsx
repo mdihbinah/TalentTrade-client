@@ -1,4 +1,5 @@
 
+import { getTokenServer } from "@/app/lib/commonFunction";
 import DeleteTask from "@/component/dashboard/admin/DeleteTask";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -62,8 +63,13 @@ import { FiTrash2 } from "react-icons/fi";
 export default async function JobsTable() {
 
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const tokenData = await getTokenServer()
 
-    const jobs = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`).then(r => r.json())
+    const jobs = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`, {
+        headers: {
+                authorization: `Bearer ${tokenData?.token}`
+            }
+    }).then(r => r.json())
     // fetch("https://example.com/api/users", {
     //     method: "DELETE",
     //     headers: {

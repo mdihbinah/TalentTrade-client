@@ -70,7 +70,7 @@ export default async function UsersList() {
               </td>
               <td className="px-6 py-4">
 
-                <span className="
+                {/* <span className="
                   px-3 py-1
                   rounded-full
                   bg-green-100
@@ -79,11 +79,13 @@ export default async function UsersList() {
                   font-medium
                 ">
                   {user.isBlocked ? 'Blocked' : 'Active'}
-                </span>
+                </span> */}
+
+                <span className={`${user.isBlocked ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'} px-3 py-1 rounded-full text-sm font-medium`} >{user.isBlocked ? 'Blocked': 'Active'}</span>
 
               </td>
               <td className="px-6 py-4 text-gray-500">
-                {user.joined}
+                {user.createdAt}
               </td>
 
               <td className="px-6 py-4 text-right">

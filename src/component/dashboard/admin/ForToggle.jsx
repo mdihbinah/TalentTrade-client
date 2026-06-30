@@ -1,16 +1,16 @@
 'use client'
 import { authClient } from "@/app/lib/auth-client";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
 
 const ForToggle = ({ user }) => {
-    const [toggle, setToggle] = useState(user.isBlocked)
+    // const [toggle, setToggle] = useState(user.isBlocked)
     const router = useRouter()
 
     const handleUpdate = async () => {
-        setToggle(!toggle)
+        // setToggle(!toggle)
         const { data: tokenData } = await authClient.token()
         // console.log('e', tokenData);
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/user/${user._id}`, {
@@ -22,20 +22,22 @@ const ForToggle = ({ user }) => {
             body: JSON.stringify({
                 isBlocked: !user.isBlocked
             })
+
         })
 
-        router.push(`/dashboard/admin/users`)
+        if (!res.ok) {
+            console.log('Update failed');
+        }
+
+        router.refresh();
     }
     return (
         <div>
             <button
-                className="
-                  text-red-500
-                  hover:text-red-700
-                  "
-                onClick={handleUpdate}
+                className={`${user.isBlocked ? 'text-green-500 hover:text-green-700': 'text-red-500 hover:text-red-700'} py-1 px-2`}
+                onClick={()=>{handleUpdate()}}
             >
-                {toggle ? "Unblock" : 'Block'}
+                {user.isBlocked ? "Unblock" : 'Block'}
             </button>
         </div>
     );

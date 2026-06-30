@@ -29,25 +29,27 @@ const PostTaskPage = () => {
         taskInfo.createdAt = new Date().toISOString();
 
         console.log(taskInfo);
+        const { data: tokenData } = await authClient.token()
+        console.log('post', tokenData);
 
-            const res = await fetch(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/tasks`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                        // authorization: `Bearer ${tokenData?.token}`,
-                    },
-                    body: JSON.stringify(taskInfo),
-                }
-            );
-
-            const data = await res.json();
-
-            if (data) {
-                toast.success('Task posted successfully!');
-                e.target.reset();
+        const res = await fetch(
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/tasks`,
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${tokenData?.token}`,
+                },
+                body: JSON.stringify(taskInfo),
             }
+        );
+
+        const data = await res.json();
+
+        if (data) {
+            toast.success('Task posted successfully!');
+            e.target.reset();
+        }
     };
 
     return (
