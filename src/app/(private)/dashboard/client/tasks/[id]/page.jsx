@@ -3,28 +3,32 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa6";
-import TaskDetailsCard from "@/components/dashboard/client/TaskDetailsCard";
-import ProposalCard from "@/components/dashboard/client/ProposalCard";
-import ProposalEmpty from "@/components/dashboard/client/ProposalEmpty";
+import TaskDetailsCard from "@/component/dashboard/client/TaskDetailsCard";
+import ProposalCard from "@/component/dashboard/client/ProposalCard";
+import ProposalEmpty from "@/component/dashboard/client/ProposalEmpty";
+import EditTask from "@/component/dashboard/client/EditTask";
+// import Loading from "@/app/loading";
 
 export default function TaskDetailsPage() {
   const { id } = useParams();
   const router = useRouter();
+  console.log(id);
 
   const [task, setTask] = useState(null);
   const [proposals, setProposals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
 
   useEffect(() => {
     async function loadData() {
       try {
         const taskRes = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/tasks/${id}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`
         );
         const taskData = await taskRes.json();
 
         const proposalRes = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/proposals/task/${id}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/proposals/${id}`
         );
         const proposalData = await proposalRes.json();
 
@@ -40,10 +44,12 @@ export default function TaskDetailsPage() {
 
   if (loading) {
     return (
-      <div className="p-8">
-        Loading...
-      </div>
+      <p>Loading.....</p>
     );
+  }
+
+  if (!task) {
+    return <p>task not found</p>
   }
 
   return (
@@ -61,7 +67,7 @@ export default function TaskDetailsPage() {
         {task.title}
       </h1>
 
-      <TaskDetailsCard task={task} />
+      <TaskDetailsCard task={task} setIsEdit={setIsEdit} isEdit={isEdit} />
 
       <div className="mt-8 bg-white rounded-3xl border p-8">
 
@@ -69,7 +75,9 @@ export default function TaskDetailsPage() {
           Proposals ({proposals.length})
         </h2>
 
-        {proposals.length === 0 ? (
+        {isEdit ? (
+          <EditTask task={task} />
+        ) : proposals.length === 0 ? (
           <ProposalEmpty />
         ) : (
           <div className="space-y-5">
@@ -81,6 +89,7 @@ export default function TaskDetailsPage() {
             ))}
           </div>
         )}
+
 
       </div>
     </div>

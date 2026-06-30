@@ -7,8 +7,11 @@ import {
   FaRegEdit,
 } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
+import EditTask from "./EditTask";
+import DeleteCard from "./DeleteCard";
 
-export default function TaskDetailsCard({ task }) {
+export default function TaskDetailsCard({ task, setIsEdit, isEdit }) {
+  
   return (
     <div className="bg-white rounded-3xl border shadow-sm p-8">
 
@@ -40,20 +43,22 @@ export default function TaskDetailsCard({ task }) {
 
       <div className="border-t mt-8 pt-6 flex gap-4">
 
-        <Link
+        {/* <Link
           href={`/dashboard/client/edit-task/${task._id}`}
           className="flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-purple-50 hover:border-purple-300"
         >
+          
+          
+        </Link> */}
+        
+
+        <button onClick={() =>{setIsEdit(!isEdit)}}
+          className="flex items-center gap-2 px-5 py-3 rounded-xl border border-purple-300 text-purple-500 hover:bg-purple-100"
+        >
           <FaRegEdit />
           Edit
-        </Link>
-
-        <button
-          className="flex items-center gap-2 px-5 py-3 rounded-xl border border-red-300 text-red-600 hover:bg-red-50"
-        >
-          <MdDeleteOutline size={22} />
-          Delete
         </button>
+          <DeleteCard taskId={task._id}></DeleteCard>
 
       </div>
     </div>
