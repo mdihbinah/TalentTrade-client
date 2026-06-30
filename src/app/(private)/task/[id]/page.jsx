@@ -12,9 +12,9 @@ const TaskDetails = async({params}) => {
   //   headers: await headers(),
   // });
   
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/task/${id}`)
     const task = await res.json();
-    // console.log(task)
+    console.log(task)
     return (
         <main className="min-h-screen bg-gray-50 px-6 py-10">
 
@@ -22,16 +22,16 @@ const TaskDetails = async({params}) => {
       <div className="mb-8">
         <div className="flex gap-3 mb-5">
           <span className="px-4 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
-            Writing
+            {task.category}
           </span>
 
           <span className="px-4 py-1 rounded-full bg-green-100 text-green-600 text-sm font-medium">
-            open
+            {task.status}
           </span>
         </div>
 
         <h1 className="text-5xl font-bold text-gray-900">
-          Voluptatem Dicta to
+          {task.title}
         </h1>
       </div>
 
@@ -49,7 +49,7 @@ const TaskDetails = async({params}) => {
             </h2>
 
             <p className="text-gray-600 text-lg">
-              Dignissimos velit q
+              {task.description}
             </p>
 
           </div>
@@ -89,7 +89,7 @@ const TaskDetails = async({params}) => {
                 </p>
 
                 <h3 className="text-3xl font-bold text-purple-600">
-                  $29
+                  {task.budget}
                 </h3>
               </div>
 
@@ -111,7 +111,7 @@ const TaskDetails = async({params}) => {
                 </p>
 
                 <h3 className="text-xl font-semibold">
-                  6/25/2026
+                  {new Date(task.deadline).toLocaleDateString()}
                 </h3>
 
               </div>
@@ -135,7 +135,7 @@ const TaskDetails = async({params}) => {
                 </p>
 
                 <h3 className="text-xl font-semibold">
-                  6/25/2026
+                  {new Date(task.createdAt).toLocaleDateString()}
                 </h3>
 
               </div>

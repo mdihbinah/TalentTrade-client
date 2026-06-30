@@ -64,21 +64,14 @@ export default async function JobsTable() {
 
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const tokenData = await getTokenServer()
+    console.log(tokenData);
 
-    const jobs = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/tasks`, {
+    const jobs = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/tasks`, {
         headers: {
-                authorization: `Bearer ${tokenData?.token}`
-            }
+            authorization: `Bearer ${tokenData?.token}`
+        }
     }).then(r => r.json())
-    // fetch("https://example.com/api/users", {
-    //     method: "DELETE",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //         id: 123
-    //     }),
-    // });
+
     return (
 
         <div className=" bg-purple-50 p-4">

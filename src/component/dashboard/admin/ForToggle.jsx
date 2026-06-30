@@ -34,7 +34,8 @@ const ForToggle = ({ user }) => {
     return (
         <div>
             <button
-                className={`${user.isBlocked ? 'text-green-500 hover:text-green-700': 'text-red-500 hover:text-red-700'} py-1 px-2`}
+                className={`${user.isBlocked ? 'text-green-500 hover:text-green-700': 'text-red-500 hover:text-red-700'} py-1 px-2`} 
+
                 onClick={()=>{handleUpdate()}}
             >
                 {user.isBlocked ? "Unblock" : 'Block'}

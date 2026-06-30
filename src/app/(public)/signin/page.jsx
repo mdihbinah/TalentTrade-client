@@ -18,6 +18,21 @@ const SignInPage = () => {
       // callbackURL: '/'
     })
 
+    if (data?.user?.isBlocked) {
+      alert('You are Blocked')
+      const handleSignOut = async () => {
+        await authClient.signOut({
+          fetchOptions: {
+            onSuccess: () => {
+              router.push("/signin");
+            },
+          },
+        });
+      };
+      handleSignOut()
+      return null
+    }
+
     if (error) {
       toast.error('Sign in Error:' + error.message, {
         position: "top-center",
@@ -25,10 +40,7 @@ const SignInPage = () => {
         theme: "light",
       });
     } else if (data) {
-      if (data?.user?.isBlocked) {
-        alert('You are Blocked')
-        return null
-      }
+
 
       toast.success('Sign In Successful ', {
         position: "top-center",
