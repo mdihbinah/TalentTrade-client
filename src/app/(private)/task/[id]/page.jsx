@@ -8,9 +8,9 @@ import {
 } from "react-icons/fi";
 const TaskDetails = async({params}) => {
     const {id} = await params
-    const token = await auth.api.getToken({
-    headers: await headers(),
-  });
+  //   const token = await auth.api.getToken({
+  //   headers: await headers(),
+  // });
   
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`)
     const task = await res.json();

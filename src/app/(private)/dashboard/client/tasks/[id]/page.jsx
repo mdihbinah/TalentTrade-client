@@ -7,6 +7,7 @@ import TaskDetailsCard from "@/component/dashboard/client/TaskDetailsCard";
 import ProposalCard from "@/component/dashboard/client/ProposalCard";
 import ProposalEmpty from "@/component/dashboard/client/ProposalEmpty";
 import EditTask from "@/component/dashboard/client/EditTask";
+import { authClient } from "@/app/lib/auth-client";
 // import Loading from "@/app/loading";
 
 export default function TaskDetailsPage() {
@@ -22,8 +23,14 @@ export default function TaskDetailsPage() {
   useEffect(() => {
     async function loadData() {
       try {
+        const { data: tokenData } = await authClient.token()
+        console.log('ttttttttt', tokenData);
         const taskRes = await fetch(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`, {
+            headers: {
+                authorization: `Bearer ${tokenData?.token}`
+            }
+          }
         );
         const taskData = await taskRes.json();
 
@@ -67,7 +74,7 @@ export default function TaskDetailsPage() {
         {task.title}
       </h1>
 
-      <TaskDetailsCard task={task} setIsEdit={setIsEdit} isEdit={isEdit} />
+      <TaskDetailsCard task={task} setIsEdit={setIsEdit} isEdit={isEdit} proposals={proposals} />
 
       <div className="mt-8 bg-white rounded-3xl border p-8">
 

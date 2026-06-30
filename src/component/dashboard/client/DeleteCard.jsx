@@ -3,7 +3,7 @@
 import { redirect } from 'next/navigation';
 import { MdDeleteOutline } from 'react-icons/md';
 
-const DeleteCard = ({taskId}) => {
+const DeleteCard = ({taskId, proposals}) => {
     // const handleDelete = async () => {
     //     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${id}`,{
     //         method: 
@@ -14,6 +14,9 @@ const DeleteCard = ({taskId}) => {
         // const { data: tokenData } = await authClient.token()
         // console.log('ttttttttt', tokenData);
         console.log('Task Delete');
+        if(proposals.length){
+            return
+        }
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/task/${taskId}`, {
             method: 'DELETE',
             headers: {

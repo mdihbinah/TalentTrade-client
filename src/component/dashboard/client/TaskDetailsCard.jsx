@@ -10,7 +10,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import EditTask from "./EditTask";
 import DeleteCard from "./DeleteCard";
 
-export default function TaskDetailsCard({ task, setIsEdit, isEdit }) {
+export default function TaskDetailsCard({ task, setIsEdit, isEdit, proposals }) {
   
   return (
     <div className="bg-white rounded-3xl border shadow-sm p-8">
@@ -52,13 +52,13 @@ export default function TaskDetailsCard({ task, setIsEdit, isEdit }) {
         </Link> */}
         
 
-        <button onClick={() =>{setIsEdit(!isEdit)}}
+        <button onClick={() =>{task.status == 'Open' && setIsEdit(!isEdit)}}
           className="flex items-center gap-2 px-5 py-3 rounded-xl border border-purple-300 text-purple-500 hover:bg-purple-100"
         >
           <FaRegEdit />
           Edit
         </button>
-          <DeleteCard taskId={task._id}></DeleteCard>
+        <DeleteCard proposals={proposals}  taskId={task._id}></DeleteCard>
 
       </div>
     </div>
